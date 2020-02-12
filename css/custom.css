@@ -36,3 +36,6 @@
     -o-background-size: cover;
     background-size: cover;
   }
+.nav-bg{
+    background-color: black!important;
+}
