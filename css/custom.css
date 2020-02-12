@@ -14,9 +14,16 @@
 
 .img-portfolio{
     width: auto;
-    height: 20vh;
+    height: 40vh;
 }
 
 .section-portfolio{
     padding: 10rem 1rem 10rem 1rem;
+}
+
+.w-60{
+    width:60%!important;
+}
+.page-section {
+    padding: 8rem 0;
 }
