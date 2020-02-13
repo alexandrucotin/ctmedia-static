@@ -39,3 +39,10 @@
 .nav-bg{
     background-color: black!important;
 }
+
+.chantal{
+    font-family: chantal, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 4rem;
+}
