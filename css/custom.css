@@ -41,8 +41,14 @@
 }
 
 .chantal{
-    font-family: chantal, sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 4rem;
+}
+
+.sub-head-chantal{
+    font-size: 2rem;
+    font-family: chantal, sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
