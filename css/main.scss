@@ -4,7 +4,9 @@ $colors: (
     chi-siamo: #f9f6f7,
     contattaci: #ffe8d6,
     portfolio-inner: darken(#ff971d, 20%),
-    servizi-inner:darken(white, 20%)
+    servizi-inner:darken(white, 20%),
+    chi-siamo-inner:darken(#f9f6f7, 20%),
+    contattaci-inner:darken(#ffe8d6, 20%)
 );
 
 @function color($color-name) {
@@ -83,12 +85,34 @@ a{
     
 .contattaci {
     grid-area: contatto;
-    background: color(contattaci);
+    background-image: url("../img/contattaci.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .inner{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        clip-path: inset(0% 0% 0% 100%);
+        transition: all .5s ease-out;
+
+
+    }
+    &:hover .inner {
+        clip-path: inset(0% 0% 0% 0%);
+        background: color(contattaci-inner);
+        height: 100%;
+    }
 }
 
 .chi-siamo {
     grid-area: chi;
-    background: color(chi-siamo);
+    background-image: url("../img/ctmedia.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     
     .inner{
         display: grid;
@@ -109,7 +133,7 @@ a{
     }
     &:hover .inner {
         clip-path: inset(0% 0% 0% 0%);
-        background: #00B6FF;
+        background: color(chi-siamo-inner);
         height: 100%;
     }
 }
