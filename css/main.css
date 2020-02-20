@@ -1,0 +1,164 @@
+@import url("https://use.typekit.net/lct1xkz.css");
+body {
+  font-family: source-sans-pro,sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.main__subtitle {
+  font-size: 1.2em;
+  font-weight: lighter;
+  margin: 0;
+  color: black;
+}
+
+.grid__container {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1.2fr 1.5fr;
+      grid-template-columns: 1fr 1.2fr 1.5fr;
+  -ms-grid-rows: 1fr 4fr 3fr 2fr;
+      grid-template-rows: 1fr 4fr 3fr 2fr;
+      grid-template-areas: "chi   portfolio    portfolio" "chi   portfolio    portfolio" "servizi    servizi     contatto" "servizi    servizi     contatto";
+}
+
+.servizi {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: servizi;
+  background-image: url("../img/servizi-grigio.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.servizi .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: inset(100% 0% 0% 0%);
+          clip-path: inset(100% 0% 0% 0%);
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.servizi .inner i {
+  font-size: 4em;
+  color: white;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.servizi:hover .inner {
+  -webkit-clip-path: inset(0% 0% 0% 0%);
+          clip-path: inset(0% 0% 0% 0%);
+  background: #cccccc;
+  height: 100%;
+}
+
+.contattaci {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: contatto;
+  background: #ffe8d6;
+}
+
+.chi-siamo {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: chi;
+  background: #f9f6f7;
+}
+
+.chi-siamo .inner {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: inset(0% 100% 0% 0%);
+          clip-path: inset(0% 100% 0% 0%);
+  background-color: lightblue;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.chi-siamo .inner h1 {
+  font-size: 5em;
+  color: white;
+  padding: .2em;
+  margin: 0;
+}
+
+.chi-siamo:hover .inner {
+  -webkit-clip-path: inset(0% 0% 0% 0%);
+          clip-path: inset(0% 0% 0% 0%);
+  background: #00B6FF;
+  height: 100%;
+}
+
+.portfolio {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: portfolio;
+  background-image: url("../img/portfolio.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.portfolio .inner {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: inset(0% 0% 100% 0%);
+          clip-path: inset(0% 0% 100% 0%);
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.portfolio .inner h1 {
+  font-size: 5em;
+  color: white;
+  padding: .2em;
+  margin: 0;
+}
+
+.portfolio:hover .inner {
+  -webkit-clip-path: inset(0% 0% 0% 0%);
+          clip-path: inset(0% 0% 0% 0%);
+  background: #b66200;
+  height: 100%;
+}
+/*# sourceMappingURL=main.css.map */
