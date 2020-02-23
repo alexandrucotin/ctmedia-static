@@ -1,7 +1,10 @@
 @import url("https://use.typekit.net/lct1xkz.css");
-body {
+* {
   font-family: source-sans-pro,sans-serif;
   margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 a {
@@ -43,9 +46,13 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -57,11 +64,31 @@ a {
   transition: all .5s ease-out;
 }
 
-.servizi .inner i {
-  font-size: 4em;
+.servizi .inner .icon--list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.servizi .inner .icon--list img {
   color: white;
-  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.servizi .inner .service--button {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5em;
+}
+
+.servizi .inner .service--button:hover {
+  background: lightblue;
 }
 
 .servizi:hover .inner {
@@ -162,27 +189,89 @@ a {
 }
 
 .portfolio .inner {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   height: 100%;
   -webkit-clip-path: inset(0% 0% 100% 0%);
           clip-path: inset(0% 0% 100% 0%);
   -webkit-transition: all .5s ease-out;
   transition: all .5s ease-out;
+  border: 2px solid #000;
 }
 
-.portfolio .inner h1 {
-  font-size: 5em;
+.portfolio .inner .slide {
+  position: relative;
+  background: #0f0;
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-right: 2px solid #000;
+  overflow: hidden;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.portfolio .inner .slide:last-child {
+  border-right: none;
+}
+
+.portfolio .inner .slide:hover {
+  -webkit-box-flex: 5;
+      -ms-flex-positive: 5;
+          flex-grow: 5;
+}
+
+.portfolio .inner .slide:nth-child(1) {
+  background: url(../img/portfolio/DSC05504.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.portfolio .inner .slide:nth-child(2) {
+  background: url(../img/portfolio/DSC05507.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.portfolio .inner .slide:nth-child(3) {
+  background: url(../img/portfolio/DSC05514.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.portfolio .inner .slide:nth-child(4) {
+  background: url(../img/portfolio/DSC05542.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.portfolio .inner .slide .content {
+  position: absolute;
+  bottom: 0;
+  margin: 2em;
+  padding: 3em;
+  background: #000;
   color: white;
-  padding: .2em;
-  margin: 0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0s;
+  transition: 0s;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+}
+
+.portfolio .inner .slide:hover .content {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .portfolio:hover .inner {

@@ -21,9 +21,12 @@ $desktop: 840px;
     }
 }
 
-body{
+*
+{
     font-family: source-sans-pro,sans-serif;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 a{
@@ -62,19 +65,35 @@ a{
     background-size: cover;
     .inner{
         display: flex;
-        justify-content: space-evenly;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         width: 100%;
         height: 100%;
         clip-path: inset(100% 0% 0% 0%);
         transition: all .5s ease-out;
 
-        i{
-            font-size: 4em;
-            color: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,.2);
+        .icon--list{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
 
+            img{
+                color: white;
+            }
         }
+        
+        .service--button{
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5em;
+
+            &:hover{
+                background: lightblue;
+            }
+        }
+        
     }
     &:hover .inner {
         clip-path: inset(0% 0% 0% 0%);
@@ -146,20 +165,74 @@ a{
     background-repeat: no-repeat;
     background-size: cover;
     .inner{
-        display: grid;
-        justify-content: center;
-        align-items: center;
+        display: flex;
         width: 100%;
         height: 100%;
         clip-path: inset(0% 0% 100% 0%);
         transition: all .5s ease-out;
+        border: 2px solid #000;
 
-        h1{
-            font-size: 5em;
-            color: white;
-            padding: .2em;
-            margin: 0;
+        .slide{
+            position: relative;
+            background: #0f0;
+            height: 100%;
+            flex:1;
+            border-right: 2px solid #000;
+            overflow: hidden;
+            transition: 0.5s ease-in-out;
+
+            &:last-child{
+                border-right: none;
+            }
+
+            &:hover{
+                flex-grow: 5;
+            }
+
+            &:nth-child(1){
+                background: url(../img/portfolio/DSC05504.jpg);
+                background-position: center center;
+                background-size: cover;
+            }
+            &:nth-child(2){
+                background: url(../img/portfolio/DSC05507.jpg);
+                background-position: center center;
+                background-size: cover;
+            }
+            &:nth-child(3){
+                background: url(../img/portfolio/DSC05514.jpg);
+                background-position: center center;
+                background-size: cover;
+            }
+            &:nth-child(4){
+                background: url(../img/portfolio/DSC05542.jpg);
+                background-position: center center;
+                background-size: cover;
+            }
+
+            .content{
+                position: absolute;
+                bottom: 0;
+                margin: 2em;
+                padding: 3em;
+                background: #000;
+                color: white;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0s;
+                transform: translateY(100px);
+            }
+
+            &:hover .content{
+                visibility: visible;
+                opacity: 1;
+                transition: 0.5s;
+                transition-delay: 0.5s;
+                transform: translateY(0);
+            }
         }
+
+
     }
     &:hover .inner {
         clip-path: inset(0% 0% 0% 0%);
