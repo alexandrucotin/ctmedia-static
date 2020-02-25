@@ -1,245 +1,259 @@
+@import url("https://use.typekit.net/lct1xkz.css");
+
+* {
+  font-family: source-sans-pro, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
 $colors: (
-    portfolio: #ff971d,
-    servizi: white,
-    chi-siamo: #f9f6f7,
-    contattaci: #ffe8d6,
-    portfolio-inner: darken(#ff971d, 20%),
-    servizi-inner:darken(white, 20%),
-    chi-siamo-inner:darken(#f9f6f7, 20%),
-    contattaci-inner:darken(#ffe8d6, 20%)
+  portfolio: #ff971d,
+  servizi: white,
+  chi-siamo: #f9f6f7,
+  contattaci: #ffe8d6,
+  portfolio-inner: darken(#ff971d, 20%),
+  servizi-inner: darken(rgb(148, 63, 63), 20%),
+  chi-siamo-inner: darken(#f9f6f7, 20%),
+  contattaci-inner: darken(#ffe8d6, 20%)
 );
 
 @function color($color-name) {
-    @return map-get($colors, $color-name)
+  @return map-get($colors, $color-name);
 }
 
-$desktop: 840px;
-
-@mixin desktop {
-    @media (min-width: #{$desktop}) {
-        @content;
-    }
+@mixin phone {
+  @media (max-width: 840px) {
+    @content;
+  }
 }
 
-*
-{
-    font-family: source-sans-pro,sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-a{
-    text-decoration: none;
-    color:black;
-}
+.grid__container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1.5fr;
+  grid-template-rows: 1fr 4fr 3fr 2fr;
+  grid-template-areas:
+    "chi-siamo   portfolio    portfolio"
+    "chi-siamo   portfolio    portfolio"
+    "servizi    servizi     contattaci"
+    "servizi    servizi     contattaci";
 
-@import url("https://use.typekit.net/lct1xkz.css");
-
-
-.main__subtitle{
-    font-size: 1.2em;
-    font-weight: lighter;
-    margin: 0;
-    color: black;
-}
-
-.grid__container{
+  @include phone {
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1.2fr 1.5fr;
-    grid-template-rows: 1fr 4fr 3fr 2fr;
-
+    grid-template-columns: 100%;
     grid-template-areas:
-        "chi   portfolio    portfolio"
-        "chi   portfolio    portfolio"
-        "servizi    servizi     contatto"
-        "servizi    servizi     contatto";
+      "chi-siamo"
+      "servizi"
+      "portfolio"
+      "contattaci";
+  }
 }
 
-.servizi{
+.servizi {
+  grid-area: servizi;
+  background-image: url("../img/servizi-grigio.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    clip-path: inset(100% 0% 0% 0%);
+    transition: all 0.5s ease-out;
+
+    .icon--list {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      img {
+        color: white;
+      }
+    }
+
+    .service--button {
+      background-color: white;
+      border-radius: 10px;
+      padding: 1.5em;
+
+      &:hover {
+        background: lightblue;
+      }
+    }
+  }
+  &:hover .inner {
+    clip-path: inset(0% 0% 0% 0%);
+    background: color(servizi-inner);
+    height: 100%;
+  }
+  @include phone {
     grid-area: servizi;
-    background-image: url("../img/servizi-grigio.jpeg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    .inner{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        clip-path: inset(100% 0% 0% 0%);
-        transition: all .5s ease-out;
-
-        .icon--list{
-            width: 100%;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-
-            img{
-                color: white;
-            }
-        }
-        
-        .service--button{
-            background-color: white;
-            border-radius: 10px;
-            padding: 1.5em;
-
-            &:hover{
-                background: lightblue;
-            }
-        }
-        
-    }
-    &:hover .inner {
-        clip-path: inset(0% 0% 0% 0%);
-        background: color(servizi-inner);
-        height: 100%;
-    }
+    height: 100vh;
+    align-self: center;
+  }
 }
-    
+
 .contattaci {
-    grid-area: contatto;
-    background-image: url("../img/contattaci.jpeg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    .inner{
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        clip-path: inset(0% 0% 0% 100%);
-        transition: all .5s ease-out;
-
-
-    }
-    &:hover .inner {
-        clip-path: inset(0% 0% 0% 0%);
-        background: color(contattaci-inner);
-        height: 100%;
-    }
+  grid-area: contattaci;
+  background-image: url("../img/contattaci.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .inner {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    clip-path: inset(0% 0% 0% 100%);
+    transition: all 0.5s ease-out;
+  }
+  &:hover .inner {
+    clip-path: inset(0% 0% 0% 0%);
+    background: color(contattaci-inner);
+    height: 100%;
+  }
+  @include phone {
+    grid-area: contattaci;
+    height: 100vh;
+    align-self: center;
+  }
 }
 
 .chi-siamo {
-    grid-area: chi;
-    background-image: url("../img/ctmedia.jpeg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-    .inner{
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        clip-path: inset(0% 100% 0% 0%);
-        background-color: lightblue;
-        transition: all .5s ease-out;
+  grid-area: chi-siamo;
+  background-image: url("../img/ctmedia.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-        h1{
-            font-size: 5em;
-            color: white;
-            padding: .2em;
-            margin: 0;
-        }
+  .inner {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    clip-path: inset(0% 100% 0% 0%);
+    background-color: lightblue;
+    transition: all 0.5s ease-out;
+
+    h1 {
+      font-size: 5em;
+      color: white;
+      padding: 0.2em;
+      margin: 0;
     }
-    &:hover .inner {
-        clip-path: inset(0% 0% 0% 0%);
-        background: color(chi-siamo-inner);
-        height: 100%;
-    }
+  }
+  &:hover .inner {
+    clip-path: inset(0% 0% 0% 0%);
+    background: color(chi-siamo-inner);
+    height: 100%;
+  }
+
+  @include phone {
+    grid-area: chi-siamo;
+    height: 100vh;
+    align-self: center;
+  }
 }
 
-    
-.portfolio{
+.portfolio {
+  grid-area: portfolio;
+  background-image: url("../img/portfolio.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    clip-path: inset(0% 0% 100% 0%);
+    transition: all 0.5s ease-out;
+
+    .slide {
+      position: relative;
+      height: 100%;
+      flex: 1;
+      overflow: hidden;
+      transition: 0.5s ease-in-out;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &:hover {
+        flex-grow: 5;
+      }
+
+      &:nth-child(1) {
+        background: url(../img/portfolio/DSC05504.jpg);
+        background-position: center center;
+        background-size: cover;
+      }
+      &:nth-child(2) {
+        background: url(../img/portfolio/DSC05507.jpg);
+        background-position: center center;
+        background-size: cover;
+      }
+      &:nth-child(3) {
+        background: url(../img/portfolio/DSC05514.jpg);
+        background-position: center center;
+        background-size: cover;
+      }
+      &:nth-child(4) {
+        background: url(../img/portfolio/DSC05542.jpg);
+        background-position: center center;
+        background-size: cover;
+      }
+
+      .content {
+        position: absolute;
+        bottom: 0;
+        margin: 2em;
+        padding: 3em;
+        background: #000;
+        color: white;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0s;
+        transform: translateY(100px);
+      }
+
+      &:hover .content {
+        visibility: visible;
+        opacity: 1;
+        transition: 0.5s;
+        transition-delay: 0.5s;
+        transform: translateY(0);
+      }
+    }
+  }
+  &:hover .inner {
+    clip-path: inset(0% 0% 0% 0%);
+    background: color(portfolio-inner);
+    height: 100%;
+  }
+
+  @include phone {
     grid-area: portfolio;
-    background-image: url("../img/portfolio.jpeg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    .inner{
-        display: flex;
-        width: 100%;
-        height: 100%;
-        clip-path: inset(0% 0% 100% 0%);
-        transition: all .5s ease-out;
-        border: 2px solid #000;
-
-        .slide{
-            position: relative;
-            background: #0f0;
-            height: 100%;
-            flex:1;
-            border-right: 2px solid #000;
-            overflow: hidden;
-            transition: 0.5s ease-in-out;
-
-            &:last-child{
-                border-right: none;
-            }
-
-            &:hover{
-                flex-grow: 5;
-            }
-
-            &:nth-child(1){
-                background: url(../img/portfolio/DSC05504.jpg);
-                background-position: center center;
-                background-size: cover;
-            }
-            &:nth-child(2){
-                background: url(../img/portfolio/DSC05507.jpg);
-                background-position: center center;
-                background-size: cover;
-            }
-            &:nth-child(3){
-                background: url(../img/portfolio/DSC05514.jpg);
-                background-position: center center;
-                background-size: cover;
-            }
-            &:nth-child(4){
-                background: url(../img/portfolio/DSC05542.jpg);
-                background-position: center center;
-                background-size: cover;
-            }
-
-            .content{
-                position: absolute;
-                bottom: 0;
-                margin: 2em;
-                padding: 3em;
-                background: #000;
-                color: white;
-                visibility: hidden;
-                opacity: 0;
-                transition: 0s;
-                transform: translateY(100px);
-            }
-
-            &:hover .content{
-                visibility: visible;
-                opacity: 1;
-                transition: 0.5s;
-                transition-delay: 0.5s;
-                transform: translateY(0);
-            }
-        }
-
-
-    }
-    &:hover .inner {
-        clip-path: inset(0% 0% 0% 0%);
-        background: color(portfolio-inner);
-        height: 100%;
-    }
+    height: 100vh;
+    align-self: center;
+  }
 }
-    
-
-

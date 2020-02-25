@@ -1,21 +1,18 @@
 @import url("https://use.typekit.net/lct1xkz.css");
 * {
-  font-family: source-sans-pro,sans-serif;
+  font-family: source-sans-pro, sans-serif;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-  color: black;
+body, html {
+  height: 100%;
 }
 
-.main__subtitle {
-  font-size: 1.2em;
-  font-weight: lighter;
-  margin: 0;
+a {
+  text-decoration: none;
   color: black;
 }
 
@@ -27,7 +24,18 @@ a {
       grid-template-columns: 1fr 1.2fr 1.5fr;
   -ms-grid-rows: 1fr 4fr 3fr 2fr;
       grid-template-rows: 1fr 4fr 3fr 2fr;
-      grid-template-areas: "chi   portfolio    portfolio" "chi   portfolio    portfolio" "servizi    servizi     contatto" "servizi    servizi     contatto";
+      grid-template-areas: "chi-siamo   portfolio    portfolio" "chi-siamo   portfolio    portfolio" "servizi    servizi     contattaci" "servizi    servizi     contattaci";
+}
+
+@media (max-width: 840px) {
+  .grid__container {
+    height: 100vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+        grid-template-areas: "chi-siamo" "servizi" "portfolio" "contattaci";
+  }
 }
 
 .servizi {
@@ -60,8 +68,8 @@ a {
   height: 100%;
   -webkit-clip-path: inset(100% 0% 0% 0%);
           clip-path: inset(100% 0% 0% 0%);
-  -webkit-transition: all .5s ease-out;
-  transition: all .5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .servizi .inner .icon--list {
@@ -94,15 +102,29 @@ a {
 .servizi:hover .inner {
   -webkit-clip-path: inset(0% 0% 0% 0%);
           clip-path: inset(0% 0% 0% 0%);
-  background: #cccccc;
+  background: #4c2121;
   height: 100%;
+}
+
+@media (max-width: 840px) {
+  .servizi {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: servizi;
+    height: 100vh;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 
 .contattaci {
   -ms-grid-row: 3;
   -ms-grid-row-span: 2;
   -ms-grid-column: 3;
-  grid-area: contatto;
+  grid-area: contattaci;
   background-image: url("../img/contattaci.jpeg");
   background-position: center;
   background-repeat: no-repeat;
@@ -122,8 +144,8 @@ a {
   height: 100%;
   -webkit-clip-path: inset(0% 0% 0% 100%);
           clip-path: inset(0% 0% 0% 100%);
-  -webkit-transition: all .5s ease-out;
-  transition: all .5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .contattaci:hover .inner {
@@ -133,11 +155,24 @@ a {
   height: 100%;
 }
 
+@media (max-width: 840px) {
+  .contattaci {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+    grid-area: contattaci;
+    height: 100vh;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
 .chi-siamo {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
-  grid-area: chi;
+  grid-area: chi-siamo;
   background-image: url("../img/ctmedia.jpeg");
   background-position: center;
   background-repeat: no-repeat;
@@ -158,14 +193,14 @@ a {
   -webkit-clip-path: inset(0% 100% 0% 0%);
           clip-path: inset(0% 100% 0% 0%);
   background-color: lightblue;
-  -webkit-transition: all .5s ease-out;
-  transition: all .5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .chi-siamo .inner h1 {
   font-size: 5em;
   color: white;
-  padding: .2em;
+  padding: 0.2em;
   margin: 0;
 }
 
@@ -174,6 +209,19 @@ a {
           clip-path: inset(0% 0% 0% 0%);
   background: #d0b9c1;
   height: 100%;
+}
+
+@media (max-width: 840px) {
+  .chi-siamo {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: chi-siamo;
+    height: 100vh;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 
 .portfolio {
@@ -196,19 +244,16 @@ a {
   height: 100%;
   -webkit-clip-path: inset(0% 0% 100% 0%);
           clip-path: inset(0% 0% 100% 0%);
-  -webkit-transition: all .5s ease-out;
-  transition: all .5s ease-out;
-  border: 2px solid #000;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .portfolio .inner .slide {
   position: relative;
-  background: #0f0;
   height: 100%;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  border-right: 2px solid #000;
   overflow: hidden;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
@@ -279,5 +324,19 @@ a {
           clip-path: inset(0% 0% 0% 0%);
   background: #b66200;
   height: 100%;
+}
+
+@media (max-width: 840px) {
+  .portfolio {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: portfolio;
+    height: 100vh;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 /*# sourceMappingURL=main.css.map */
