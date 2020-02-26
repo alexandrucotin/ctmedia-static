@@ -7,8 +7,9 @@
   box-sizing: border-box;
 }
 
-body, html {
-    height: 100%;
+body,
+html {
+  height: 100%;
 }
 
 $colors: (
@@ -17,7 +18,7 @@ $colors: (
   chi-siamo: #f9f6f7,
   contattaci: #ffe8d6,
   portfolio-inner: darken(#ff971d, 20%),
-  servizi-inner: darken(rgb(148, 63, 63), 20%),
+  servizi-inner: darken(white, 20%),
   chi-siamo-inner: darken(#f9f6f7, 20%),
   contattaci-inner: darken(#ffe8d6, 20%)
 );
@@ -67,33 +68,51 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   .inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: 100%;
     clip-path: inset(100% 0% 0% 0%);
     transition: all 0.5s ease-out;
 
-    .icon--list {
-      width: 100%;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
+    .slogan {
+      padding: 3em;
+      .bold {
+        color: black;
+        font-weight: bold;
+        font-size: 3em;
+      }
 
-      img {
+      .small {
         color: white;
+        font-size: 1.5em;
+        font-weight: lighter;
       }
     }
 
-    .service--button {
-      background-color: white;
-      border-radius: 10px;
-      padding: 1.5em;
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-      &:hover {
-        background: lightblue;
+      .icon--list {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        img {
+          color: white;
+        }
+      }
+
+      .service--button {
+        background-color: white;
+        border-radius: 10px;
+        padding: 1.5em;
+
+        &:hover {
+          background: lightblue;
+        }
       }
     }
   }
@@ -153,11 +172,21 @@ a {
     background-color: lightblue;
     transition: all 0.5s ease-out;
 
-    h1 {
-      font-size: 5em;
-      color: white;
-      padding: 0.2em;
-      margin: 0;
+    .content {
+      padding: 2em;
+
+      h1 {
+        font-size: 3em;
+        margin-bottom: 1em;
+      }
+
+      .chisiamo {
+        font-size: 1.2em;
+
+        span {
+          font-weight: bold;
+        }
+      }
     }
   }
   &:hover .inner {
