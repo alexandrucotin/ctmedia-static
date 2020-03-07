@@ -1,36 +1,36 @@
-@import url("https://use.typekit.net/lct1xkz.css");
-
-* {
-  font-family: source-sans-pro, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body,
-html {
-  height: 100%;
-}
-
+//    SASS FUNCTIONS    //
 $colors: (
-  portfolio: #ff971d,
-  servizi: white,
-  chi-siamo: #f9f6f7,
-  contattaci: #ffe8d6,
-  portfolio-inner: darken(#ff971d, 20%),
-  servizi-inner: darken(white, 20%),
-  chi-siamo-inner: darken(#f9f6f7, 20%),
-  contattaci-inner: darken(#ffe8d6, 20%)
+  primary: #00adb5,
+  secondary: #eeeeee,
+  dark-grey: #393e46,
+  dark-black: #222831
 );
 
 @function color($color-name) {
-  @return map-get($colors, $color-name);
+  @return map-get($colors, $color-name)
 }
 
+$phone: 500px;
+
 @mixin phone {
-  @media (max-width: 840px) {
+  @media (max-width: #{$phone}) {
     @content;
   }
+}
+
+//    GENERAL STYLING   //
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Circe", sans-serif;
 }
 
 a {
@@ -38,251 +38,222 @@ a {
   color: black;
 }
 
-.grid__container {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr 1.5fr;
-  grid-template-rows: 1fr 4fr 3fr 2fr;
-  grid-template-areas:
-    "chi-siamo   portfolio    portfolio"
-    "chi-siamo   portfolio    portfolio"
-    "servizi    servizi     contattaci"
-    "servizi    servizi     contattaci";
+//    NAV'S STYLE   //
 
-  @include phone {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-areas:
-      "chi-siamo"
-      "servizi"
-      "portfolio"
-      "contattaci";
-  }
-}
+//    TOP NAVIGATION ON DESKTOP   //
 
-.servizi {
-  grid-area: servizi;
-  background-image: url("../img/servizi-grigio.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  .inner {
-    width: 100%;
-    height: 100%;
-    clip-path: inset(100% 0% 0% 0%);
-    transition: all 0.5s ease-out;
+.top__nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 1em;
 
-    .slogan {
-      padding: 3em;
-      .bold {
-        color: black;
-        font-weight: bold;
-        font-size: 3em;
-      }
+  .menu {
+    margin: 0 30px 0 0;
 
-      .small {
-        color: white;
-        font-size: 1.5em;
-        font-weight: lighter;
+    #no--display {
+      @include phone {
+        display: none;
       }
     }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      .icon--list {
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-
-        img {
-          color: white;
-        }
-      }
-
-      .service--button {
-        background-color: white;
-        border-radius: 10px;
-        padding: 1.5em;
-
-        &:hover {
-          background: lightblue;
-        }
-      }
-    }
-  }
-  &:hover .inner {
-    clip-path: inset(0% 0% 0% 0%);
-    background: color(servizi-inner);
-    height: 100%;
-  }
-  @include phone {
-    grid-area: servizi;
-    height: 100vh;
-    align-self: center;
-  }
-}
-
-.contattaci {
-  grid-area: contattaci;
-  background-image: url("../img/contattaci.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  .inner {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    clip-path: inset(0% 0% 0% 100%);
-    transition: all 0.5s ease-out;
-  }
-  &:hover .inner {
-    clip-path: inset(0% 0% 0% 0%);
-    background: color(contattaci-inner);
-    height: 100%;
-  }
-  @include phone {
-    grid-area: contattaci;
-    height: 100vh;
-    align-self: center;
-  }
-}
-
-.chi-siamo {
-  grid-area: chi-siamo;
-  background-image: url("../img/ctmedia.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  .inner {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    clip-path: inset(0% 100% 0% 0%);
-    background-color: lightblue;
-    transition: all 0.5s ease-out;
-
-    .content {
-      padding: 2em;
-
-      h1 {
-        font-size: 3em;
-        margin-bottom: 1em;
-      }
-
-      .chisiamo {
-        font-size: 1.2em;
-
-        span {
-          font-weight: bold;
-        }
-      }
-    }
-  }
-  &:hover .inner {
-    clip-path: inset(0% 0% 0% 0%);
-    background: color(chi-siamo-inner);
-    height: 100%;
-  }
-
-  @include phone {
-    grid-area: chi-siamo;
-    height: 100vh;
-    align-self: center;
-  }
-}
-
-.portfolio {
-  grid-area: portfolio;
-  background-image: url("../img/portfolio.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  .inner {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    clip-path: inset(0% 0% 100% 0%);
-    transition: all 0.5s ease-out;
-
-    .slide {
-      position: relative;
-      height: 100%;
-      flex: 1;
-      overflow: hidden;
-      transition: 0.5s ease-in-out;
-
-      &:last-child {
-        border-right: none;
-      }
+    a {
+      clear: right;
+      text-decoration: none;
+      color: #eeeeee;
+      margin: 0 10px;
+      line-height: 2em;
 
       &:hover {
-        flex-grow: 5;
+        color: #393e46;
       }
 
-      &:nth-child(1) {
-        background: url(../img/portfolio/DSC05504.jpg);
-        background-position: center center;
-        background-size: cover;
-      }
-      &:nth-child(2) {
-        background: url(../img/portfolio/DSC05507.jpg);
-        background-position: center center;
-        background-size: cover;
-      }
-      &:nth-child(3) {
-        background: url(../img/portfolio/DSC05514.jpg);
-        background-position: center center;
-        background-size: cover;
-      }
-      &:nth-child(4) {
-        background: url(../img/portfolio/DSC05542.jpg);
-        background-position: center center;
-        background-size: cover;
+      span {
+        font-weight: bold;
       }
 
-      .content {
-        position: absolute;
-        bottom: 0;
-        margin: 2em;
-        padding: 3em;
-        background: #000;
-        color: white;
-        visibility: hidden;
-        opacity: 0;
-        transition: 0s;
-        transform: translateY(100px);
+      @include phone {
+        display: block;
+        margin: 0;
       }
+    }
 
-      &:hover .content {
-        visibility: visible;
-        opacity: 1;
-        transition: 0.5s;
-        transition-delay: 0.5s;
-        transform: translateY(0);
+    @include phone {
+      text-align: center;
+      width: 100%;
+      display: none;
+    }
+  }
+  label {
+    font-size: 1.2em;
+    display: none;
+    width: 1.2em;
+    float: right;
+    color: #eeeeee;
+
+    @include phone {
+      display: block;
+      cursor: pointer;
+    }
+  }
+  #toggle {
+    display: none;
+
+    @include phone {
+      &:checked + .menu {
+        display: block;
       }
     }
   }
-  &:hover .inner {
-    clip-path: inset(0% 0% 0% 0%);
-    background: color(portfolio-inner);
-    height: 100%;
+}
+
+//    BOTTOM NAVIGATION ON MOBILE   //
+
+.bottom__nav {
+  display: none;
+
+  .title {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #eeeeee;
+  }
+
+  .button {
+    padding: 0.3em 1em;
+    color: #222831;
+    border-radius: 0.5em;
+    background-color: #eeeeee;
   }
 
   @include phone {
-    grid-area: portfolio;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    padding: 1em;
+    background-color: #222831;
+  }
+}
+
+//    SECTIONS    //
+
+//    HOMEPAGE    //
+
+.home {
+  @include phone {
     height: 100vh;
-    align-self: center;
+    width: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1.2fr .8fr 1fr;
+    grid-template-areas:
+      "spazio spazio"
+      "titolo titolo"
+      "sottotitolo sottotitolo";
+  }
+
+  .container__spazio {
+    grid-area: spazio;
+    background-image: url(../imgs/bg4.png);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container__titolo {
+    grid-area: titolo;
+    background-color: color(secondary);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    padding: 1em;
+    
+    .titolo {
+      margin: 0;
+      font-size: 3em;
+      font-weight: 300;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+  .container__sottotitolo {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: sottotitolo;
+    background: url(../imgs/bg11.png);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+
+
+    p {
+      font-weight: 200;
+      font-size: 1em;
+      margin: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        font-size: 1.3em;
+        display: inline-block;
+        padding-right: 0.4em;
+        font-weight: bold;
+
+        a {
+          padding: .1em;
+          
+          }
+        }
+      }
+    }
+  }
+
+
+//    CHI SIAMO    //
+
+.chi-siamo{
+  @include phone {
+
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "immagine immagine"
+      "testo testo"
+      "spazio1 spazio1";
+  }
+
+  .container__up{
+    grid-area: immagine;
+    background-image: url(../imgs/bg3.png);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    max-width: 100%;
+    height: auto;
+  }
+
+    
+
+  .container__testo{
+    background-color: color(secondary);
+    grid-area: testo;
+    padding: 2em;
+  }
+
+  .container__down{
+    grid-area: spazio1;
+    background-color: color(secondary);
   }
 }
