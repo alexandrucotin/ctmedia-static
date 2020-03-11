@@ -7,7 +7,7 @@ $colors: (
 );
 
 @function color($color-name) {
-  @return map-get($colors, $color-name)
+  @return map-get($colors, $color-name);
 }
 
 $phone: 500px;
@@ -84,11 +84,14 @@ a {
     }
   }
   label {
+    padding: .3em;
+    text-align: center;
     font-size: 1.2em;
     display: none;
-    width: 1.2em;
+    width: 2.162em;
     float: right;
-    color: #eeeeee;
+    background-color: white;
+    border-radius: 50%;
 
     @include phone {
       display: block;
@@ -145,32 +148,41 @@ a {
     width: auto;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 1.2fr .8fr 1fr;
+    grid-template-rows: 1fr 0.6fr 0.6fr 0.6fr;
     grid-template-areas:
       "spazio spazio"
       "titolo titolo"
+      "immagine immagine"
       "sottotitolo sottotitolo";
   }
 
   .container__spazio {
     grid-area: spazio;
-    background-image: url(../imgs/bg4.png);
+    background-image: url(../imgs/bg4.svg);
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
     max-width: 100%;
     height: auto;
+
+    .img__container {
+      text-align: center;
+
+      img {
+        width: 70%;
+        height: auto;
+      }
+    }
   }
 
   .container__titolo {
+    margin-top: -0.1em;
     grid-area: titolo;
-    background-color: color(secondary);
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;
+    background-color: #0485b7;
     padding: 1em;
-    
+
     .titolo {
+      color: white;
       margin: 0;
       font-size: 3em;
       font-weight: 300;
@@ -180,17 +192,21 @@ a {
       }
     }
   }
+  .img__container {
+    grid-area: immagine;
+    img {
+      margin-left: -3em;
+      width: 60%;
+      height: auto;
+    }
+  }
+
   .container__sottotitolo {
-    padding: 1em;
+    margin-top: -3.5em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     grid-area: sottotitolo;
-    background: url(../imgs/bg11.png);
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;
-
+    text-align: right;
 
     p {
       font-weight: 200;
@@ -210,20 +226,17 @@ a {
         font-weight: bold;
 
         a {
-          padding: .1em;
-          
-          }
+          padding: 0.1em;
         }
       }
     }
   }
-
+}
 
 //    CHI SIAMO    //
 
-.chi-siamo{
+.chi-siamo {
   @include phone {
-
     height: 100vh;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -234,7 +247,7 @@ a {
       "spazio1 spazio1";
   }
 
-  .container__up{
+  .container__up {
     grid-area: immagine;
     background-image: url(../imgs/bg3.png);
     background-position: center; /* Center the image */
@@ -244,15 +257,13 @@ a {
     height: auto;
   }
 
-    
-
-  .container__testo{
+  .container__testo {
     background-color: color(secondary);
     grid-area: testo;
     padding: 2em;
   }
 
-  .container__down{
+  .container__down {
     grid-area: spazio1;
     background-color: color(secondary);
   }
