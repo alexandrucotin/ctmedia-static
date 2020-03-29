@@ -119,6 +119,7 @@ a {
         left: 10%;
         width: 3%;
         animation: moveY 2s linear infinite;
+        animation-delay: 1.5s;
       }
 
       &:nth-child(2) {
@@ -126,21 +127,22 @@ a {
         width: 2%;
         top: 10%;
         animation: moveY 4s linear infinite;
+        animation-delay: 1.7s;
       }
 
       &:nth-child(3) {
         top: 45%;
-        left: 60%;
+        left: 70%;
         width: 4%;
         animation: moveY 4s linear infinite;
-        animation-delay: 1s;
+        animation-delay: 1.7s;
       }
       &:nth-child(4) {
         top: 25%;
         left: 5%;
         width: 5%;
-        animation: rotate-move 10s ease-in-out infinite;
-        animation-delay: 1s;
+        animation: rotate 10s ease-in-out infinite;
+        animation-delay: 1.5s;
       }
 
       &:nth-child(5) {
@@ -156,12 +158,14 @@ a {
         left: 50%;
         width: 2%;
         animation: rotate 10s ease-in-out infinite;
+        animation-delay: 1.6s;
       }
       &:nth-child(7) {
         top: 50%;
         left: 20%;
         width: 3%;
         animation: moveX 2s linear infinite;
+        animation-delay: 1.5s;
       }
 
       &:nth-child(8) {
@@ -182,33 +186,18 @@ a {
         top: 90%;
         left: 20%;
         width: 3%;
-        animation: rotate-move 10s linear infinite;
+        animation: rotate 10s linear infinite;
       }
 
       &:nth-child(11) {
         top: 20%;
         left: 80%;
         width: 2%;
-        animation: moveX 6s linear infinite;
       }
     }
   }
 }
 // ANIMATION //
-
-@keyframes rotate-move {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: translateX(400px);
-    transform: rotate(360deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
 
 @keyframes fall-from-top {
   0% {
@@ -272,13 +261,15 @@ a {
     "lower__title";
 
   .upper__title {
+
     grid-area: upper__title;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
     .title {
-      font-size: 3em;
+      margin: 0;
+      font-size: 2.5em;
       text-align: center;
       span {
         font-weight: bold;

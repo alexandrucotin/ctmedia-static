@@ -118,6 +118,8 @@ a {
   width: 3%;
   -webkit-animation: moveY 2s linear infinite;
           animation: moveY 2s linear infinite;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
 }
 
 .background .set div:nth-child(2) {
@@ -126,26 +128,28 @@ a {
   top: 10%;
   -webkit-animation: moveY 4s linear infinite;
           animation: moveY 4s linear infinite;
+  -webkit-animation-delay: 1.7s;
+          animation-delay: 1.7s;
 }
 
 .background .set div:nth-child(3) {
   top: 45%;
-  left: 60%;
+  left: 70%;
   width: 4%;
   -webkit-animation: moveY 4s linear infinite;
           animation: moveY 4s linear infinite;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  -webkit-animation-delay: 1.7s;
+          animation-delay: 1.7s;
 }
 
 .background .set div:nth-child(4) {
   top: 25%;
   left: 5%;
   width: 5%;
-  -webkit-animation: rotate-move 10s ease-in-out infinite;
-          animation: rotate-move 10s ease-in-out infinite;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  -webkit-animation: rotate 10s ease-in-out infinite;
+          animation: rotate 10s ease-in-out infinite;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
 }
 
 .background .set div:nth-child(5) {
@@ -164,6 +168,8 @@ a {
   width: 2%;
   -webkit-animation: rotate 10s ease-in-out infinite;
           animation: rotate 10s ease-in-out infinite;
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
 }
 
 .background .set div:nth-child(7) {
@@ -172,6 +178,8 @@ a {
   width: 3%;
   -webkit-animation: moveX 2s linear infinite;
           animation: moveX 2s linear infinite;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
 }
 
 .background .set div:nth-child(8) {
@@ -194,50 +202,14 @@ a {
   top: 90%;
   left: 20%;
   width: 3%;
-  -webkit-animation: rotate-move 10s linear infinite;
-          animation: rotate-move 10s linear infinite;
+  -webkit-animation: rotate 10s linear infinite;
+          animation: rotate 10s linear infinite;
 }
 
 .background .set div:nth-child(11) {
   top: 20%;
   left: 80%;
   width: 2%;
-  -webkit-animation: moveX 6s linear infinite;
-          animation: moveX 6s linear infinite;
-}
-
-@-webkit-keyframes rotate-move {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  50% {
-    -webkit-transform: translateX(400px);
-            transform: translateX(400px);
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-}
-
-@keyframes rotate-move {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  50% {
-    -webkit-transform: translateX(400px);
-            transform: translateX(400px);
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
 }
 
 @-webkit-keyframes fall-from-top {
@@ -390,7 +362,8 @@ a {
 }
 
 .homepage .upper__title .title {
-  font-size: 3em;
+  margin: 0;
+  font-size: 2.5em;
   text-align: center;
 }
 
