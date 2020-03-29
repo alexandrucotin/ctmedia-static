@@ -391,11 +391,25 @@ a {
 }
 
 .homepage .lower__title p {
-  font-size: 0.9em;
+  font-size: 0.7em;
 }
 
 .homepage .lower__title a {
-  font-size: 0.8em;
+  padding: .5em;
+  font-size: 0.6em;
   font-weight: bold;
+}
+
+.underline--magical {
+  background-image: linear-gradient(120deg, #faf884 0%, #edf48f 100%);
+  background-repeat: no-repeat;
+  background-size: 30% 0.5em;
+  background-position: 0 88%;
+  -webkit-transition: background-size 0.25s ease-in;
+  transition: background-size 0.25s ease-in;
+}
+
+.underline--magical:hover {
+  background-size: 100% 88%;
 }
 /*# sourceMappingURL=main.css.map */
