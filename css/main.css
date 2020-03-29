@@ -23,7 +23,6 @@ a {
   position: fixed;
   top: 0;
   padding: 1em;
-  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .top__nav .menu {
@@ -108,17 +107,22 @@ a {
   display: block;
 }
 
+.background .set div img {
+  -webkit-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
+}
+
 .background .set div:nth-child(1) {
   top: 70%;
   left: 10%;
-  width: 5%;
+  width: 3%;
   -webkit-animation: moveY 2s linear infinite;
           animation: moveY 2s linear infinite;
 }
 
 .background .set div:nth-child(2) {
   left: 50%;
-  width: 5%;
+  width: 2%;
   top: 10%;
   -webkit-animation: moveY 4s linear infinite;
           animation: moveY 4s linear infinite;
@@ -127,7 +131,7 @@ a {
 .background .set div:nth-child(3) {
   top: 45%;
   left: 60%;
-  width: 6%;
+  width: 4%;
   -webkit-animation: moveY 4s linear infinite;
           animation: moveY 4s linear infinite;
   -webkit-animation-delay: 1s;
@@ -137,7 +141,7 @@ a {
 .background .set div:nth-child(4) {
   top: 25%;
   left: 5%;
-  width: 10%;
+  width: 5%;
   -webkit-animation: rotate-move 10s ease-in-out infinite;
           animation: rotate-move 10s ease-in-out infinite;
   -webkit-animation-delay: 1s;
@@ -147,7 +151,7 @@ a {
 .background .set div:nth-child(5) {
   top: 95%;
   left: 80%;
-  width: 5%;
+  width: 3%;
   -webkit-animation: moveX 2s linear infinite;
           animation: moveX 2s linear infinite;
   -webkit-animation-delay: 2s;
@@ -157,7 +161,7 @@ a {
 .background .set div:nth-child(6) {
   top: 82%;
   left: 50%;
-  width: 4%;
+  width: 2%;
   -webkit-animation: rotate 10s ease-in-out infinite;
           animation: rotate 10s ease-in-out infinite;
 }
@@ -165,7 +169,7 @@ a {
 .background .set div:nth-child(7) {
   top: 50%;
   left: 20%;
-  width: 5%;
+  width: 3%;
   -webkit-animation: moveX 2s linear infinite;
           animation: moveX 2s linear infinite;
 }
@@ -173,7 +177,7 @@ a {
 .background .set div:nth-child(8) {
   top: 60%;
   left: 88%;
-  width: 5%;
+  width: 3%;
   -webkit-animation: moveY 4s linear infinite;
           animation: moveY 4s linear infinite;
 }
@@ -181,7 +185,7 @@ a {
 .background .set div:nth-child(9) {
   top: 90%;
   left: 65%;
-  width: 5%;
+  width: 3%;
   -webkit-animation: fall-from-top 50s linear infinite;
           animation: fall-from-top 50s linear infinite;
 }
@@ -189,7 +193,7 @@ a {
 .background .set div:nth-child(10) {
   top: 90%;
   left: 20%;
-  width: 5%;
+  width: 3%;
   -webkit-animation: rotate-move 10s linear infinite;
           animation: rotate-move 10s linear infinite;
 }
@@ -197,7 +201,7 @@ a {
 .background .set div:nth-child(11) {
   top: 20%;
   left: 80%;
-  width: 5%;
+  width: 2%;
   -webkit-animation: moveX 6s linear infinite;
           animation: moveX 6s linear infinite;
 }

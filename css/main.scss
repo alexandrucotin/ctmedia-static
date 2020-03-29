@@ -1,11 +1,4 @@
 //    SASS FUNCTIONS    //
-$colors: (
-  primary: #00adb5,
-  secondary: #eeeeee,
-  dark-grey: #393e46,
-  dark-black: #222831
-);
-
 
 $phone: 500px;
 
@@ -44,7 +37,6 @@ a {
   position: fixed;
   top: 0;
   padding: 1em;
-  background-color: rgba($color: #000000, $alpha: .02);
 
   .menu {
     margin: 0 30px 0 0;
@@ -118,19 +110,20 @@ a {
     div {
       position: absolute;
       display: block;
-
-
-
+      
+      img{
+        filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .1));
+      }
       &:nth-child(1) {
         top: 70%;
         left: 10%;
-        width: 5%;
+        width: 3%;
         animation: moveY 2s linear infinite;
       }
 
       &:nth-child(2) {
         left: 50%;
-        width: 5%;
+        width: 2%;
         top: 10%;
         animation: moveY 4s linear infinite;
       }
@@ -138,64 +131,64 @@ a {
       &:nth-child(3) {
         top: 45%;
         left: 60%;
-        width: 6%;
+        width: 4%;
         animation: moveY 4s linear infinite;
-        animation-delay: 1s
+        animation-delay: 1s;
       }
       &:nth-child(4) {
         top: 25%;
         left: 5%;
-        width: 10%;
+        width: 5%;
         animation: rotate-move 10s ease-in-out infinite;
-        animation-delay: 1s
+        animation-delay: 1s;
       }
 
       &:nth-child(5) {
         top: 95%;
         left: 80%;
-        width: 5%;
+        width: 3%;
         animation: moveX 2s linear infinite;
-        animation-delay: 2s
+        animation-delay: 2s;
       }
 
       &:nth-child(6) {
         top: 82%;
         left: 50%;
-        width: 4%;
+        width: 2%;
         animation: rotate 10s ease-in-out infinite;
       }
       &:nth-child(7) {
         top: 50%;
         left: 20%;
-        width: 5%;
+        width: 3%;
         animation: moveX 2s linear infinite;
       }
 
       &:nth-child(8) {
         top: 60%;
         left: 88%;
-        width: 5%;
+        width: 3%;
         animation: moveY 4s linear infinite;
       }
 
       &:nth-child(9) {
         top: 90%;
         left: 65%;
-        width: 5%;
+        width: 3%;
         animation: fall-from-top 50s linear infinite;
       }
 
       &:nth-child(10) {
         top: 90%;
         left: 20%;
-        width: 5%;
+        width: 3%;
         animation: rotate-move 10s linear infinite;
       }
 
       &:nth-child(11) {
         top: 20%;
         left: 80%;
-        width: 5%;
+        width: 2%;
         animation: moveX 6s linear infinite;
       }
     }
@@ -203,18 +196,18 @@ a {
 }
 // ANIMATION //
 
-@keyframes rotate-move{
-    0%{
-        transform: rotate(0deg);
-    }
-    50%{
-        transform: translateX(400px);
-        transform: rotate(360deg);
-    }
+@keyframes rotate-move {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: translateX(400px);
+    transform: rotate(360deg);
+  }
 
-    100%{
-        transform: rotate(0deg);
-    }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @keyframes fall-from-top {
@@ -222,16 +215,16 @@ a {
     top: -10%;
     transform: rotate(0deg);
   }
-  20%{
+  20% {
     transform: rotate(360deg);
   }
-  40%{
+  40% {
     transform: rotate(0deg);
   }
-  60%{
+  60% {
     transform: rotate(360deg);
   }
-  80%{
+  80% {
     transform: rotate(0deg);
   }
   100% {
@@ -252,22 +245,22 @@ a {
 @keyframes moveY {
   0% {
   }
-  50%{
+  50% {
     transform: translateY(40%);
   }
-  100%{
+  100% {
   }
 }
 
 @keyframes moveX {
-    0% {
-    }
-    50%{
-      transform: translateX(40%);
-    }
-    100%{
-    }
+  0% {
   }
+  50% {
+    transform: translateX(40%);
+  }
+  100% {
+  }
+}
 
 // SECTIONS //
 .homepage {
