@@ -10,7 +10,7 @@ body {
 
 body {
   margin: 0;
-  font-family: "Circe", sans-serif;
+  font-family: zeitung, sans-serif;
 }
 
 a {
@@ -23,6 +23,7 @@ a {
   position: fixed;
   top: 0;
   padding: 1em;
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .top__nav .menu {
@@ -38,7 +39,6 @@ a {
 .top__nav .menu a {
   clear: right;
   text-decoration: none;
-  color: #eeeeee;
   margin: 0 10px;
   line-height: 2em;
 }
@@ -67,14 +67,8 @@ a {
 }
 
 .top__nav label {
-  padding: .3em;
-  text-align: center;
-  font-size: 1.2em;
   display: none;
-  width: 2.162em;
   float: right;
-  background-color: white;
-  border-radius: 50%;
 }
 
 @media (max-width: 500px) {
@@ -94,104 +88,291 @@ a {
   }
 }
 
-.bottom__nav {
-  display: none;
+.background {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
-.bottom__nav .title {
-  font-size: 1.3em;
-  font-weight: bold;
-  color: #eeeeee;
+.background .set {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 
-.bottom__nav .button {
-  padding: 0.3em 1em;
-  color: #222831;
-  border-radius: 0.5em;
-  background-color: #eeeeee;
+.background .set div {
+  position: absolute;
+  display: block;
 }
 
-@media (max-width: 500px) {
-  .bottom__nav {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    position: fixed;
-    bottom: 0;
-    padding: 1em;
-    background-color: #222831;
+.background .set div:nth-child(1) {
+  top: 70%;
+  left: 10%;
+  width: 5%;
+  -webkit-animation: moveY 2s linear infinite;
+          animation: moveY 2s linear infinite;
+}
+
+.background .set div:nth-child(2) {
+  left: 50%;
+  width: 5%;
+  top: 10%;
+  -webkit-animation: moveY 4s linear infinite;
+          animation: moveY 4s linear infinite;
+}
+
+.background .set div:nth-child(3) {
+  top: 45%;
+  left: 60%;
+  width: 6%;
+  -webkit-animation: moveY 4s linear infinite;
+          animation: moveY 4s linear infinite;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.background .set div:nth-child(4) {
+  top: 25%;
+  left: 5%;
+  width: 10%;
+  -webkit-animation: rotate-move 10s ease-in-out infinite;
+          animation: rotate-move 10s ease-in-out infinite;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.background .set div:nth-child(5) {
+  top: 95%;
+  left: 80%;
+  width: 5%;
+  -webkit-animation: moveX 2s linear infinite;
+          animation: moveX 2s linear infinite;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.background .set div:nth-child(6) {
+  top: 82%;
+  left: 50%;
+  width: 4%;
+  -webkit-animation: rotate 10s ease-in-out infinite;
+          animation: rotate 10s ease-in-out infinite;
+}
+
+.background .set div:nth-child(7) {
+  top: 50%;
+  left: 20%;
+  width: 5%;
+  -webkit-animation: moveX 2s linear infinite;
+          animation: moveX 2s linear infinite;
+}
+
+.background .set div:nth-child(8) {
+  top: 60%;
+  left: 88%;
+  width: 5%;
+  -webkit-animation: moveY 4s linear infinite;
+          animation: moveY 4s linear infinite;
+}
+
+.background .set div:nth-child(9) {
+  top: 90%;
+  left: 65%;
+  width: 5%;
+  -webkit-animation: fall-from-top 50s linear infinite;
+          animation: fall-from-top 50s linear infinite;
+}
+
+.background .set div:nth-child(10) {
+  top: 90%;
+  left: 20%;
+  width: 5%;
+  -webkit-animation: rotate-move 10s linear infinite;
+          animation: rotate-move 10s linear infinite;
+}
+
+.background .set div:nth-child(11) {
+  top: 20%;
+  left: 80%;
+  width: 5%;
+  -webkit-animation: moveX 6s linear infinite;
+          animation: moveX 6s linear infinite;
+}
+
+@-webkit-keyframes rotate-move {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translateX(400px);
+            transform: translateX(400px);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }
 
-@media (max-width: 500px) {
-  .home {
-    height: 100vh;
-    width: auto;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 50% 50%;
-        grid-template-columns: 50% 50%;
-    -ms-grid-rows: 1fr 0.6fr 0.6fr 0.6fr;
-        grid-template-rows: 1fr 0.6fr 0.6fr 0.6fr;
-        grid-template-areas: "spazio spazio" "titolo titolo" "immagine immagine" "sottotitolo sottotitolo";
+@keyframes rotate-move {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translateX(400px);
+            transform: translateX(400px);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }
 
-.home .container__spazio {
-  grid-area: spazio;
-  background-image: url(../imgs/bg4.svg);
-  background-position: center;
-  /* Center the image */
-  background-repeat: no-repeat;
-  /* Do not repeat the image */
-  background-size: cover;
-  max-width: 100%;
-  height: auto;
+@-webkit-keyframes fall-from-top {
+  0% {
+    top: -10%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  20% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  40% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  60% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  80% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    top: 110%;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
-.home .container__spazio .img__container {
-  text-align: center;
+@keyframes fall-from-top {
+  0% {
+    top: -10%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  20% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  40% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  60% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  80% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    top: 110%;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
-.home .container__spazio .img__container img {
-  width: 70%;
-  height: auto;
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
-.home .container__titolo {
-  margin-top: -0.1em;
-  grid-area: titolo;
-  background-color: #0485b7;
-  padding: 1em;
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
-.home .container__titolo .titolo {
-  color: white;
-  margin: 0;
-  font-size: 3em;
-  font-weight: 300;
+@-webkit-keyframes moveY {
+  0% {
+  }
+  50% {
+    -webkit-transform: translateY(40%);
+            transform: translateY(40%);
+  }
+  100% {
+  }
 }
 
-.home .container__titolo .titolo span {
-  font-weight: bold;
+@keyframes moveY {
+  0% {
+  }
+  50% {
+    -webkit-transform: translateY(40%);
+            transform: translateY(40%);
+  }
+  100% {
+  }
 }
 
-.home .img__container {
-  grid-area: immagine;
+@-webkit-keyframes moveX {
+  0% {
+  }
+  50% {
+    -webkit-transform: translateX(40%);
+            transform: translateX(40%);
+  }
+  100% {
+  }
 }
 
-.home .img__container img {
-  margin-left: -3em;
-  width: 60%;
-  height: auto;
+@keyframes moveX {
+  0% {
+  }
+  50% {
+    -webkit-transform: translateX(40%);
+            transform: translateX(40%);
+  }
+  100% {
+  }
 }
 
-.home .container__sottotitolo {
-  margin-top: -3.5em;
+.homepage {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "upper__title" "lower__title";
+}
+
+.homepage .upper__title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: upper__title;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,66 +380,45 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  grid-area: sottotitolo;
-  text-align: right;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-.home .container__sottotitolo p {
-  font-weight: 200;
-  font-size: 1em;
-  margin: 0;
+.homepage .upper__title .title {
+  font-size: 3em;
+  text-align: center;
 }
 
-.home .container__sottotitolo ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.home .container__sottotitolo ul li {
-  font-size: 1.3em;
-  display: inline-block;
-  padding-right: 0.4em;
+.homepage .upper__title .title span {
   font-weight: bold;
 }
 
-.home .container__sottotitolo ul li a {
-  padding: 0.1em;
+.homepage .lower__title {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: lower__title;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@media (max-width: 500px) {
-  .chi-siamo {
-    height: 100vh;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 50% 50%;
-        grid-template-columns: 50% 50%;
-    -ms-grid-rows: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas: "immagine immagine" "testo testo" "spazio1 spazio1";
-  }
+.homepage .lower__title p {
+  font-size: 0.9em;
 }
 
-.chi-siamo .container__up {
-  grid-area: immagine;
-  background-image: url(../imgs/bg3.png);
-  background-position: center;
-  /* Center the image */
-  background-repeat: no-repeat;
-  /* Do not repeat the image */
-  background-size: cover;
-  max-width: 100%;
-  height: auto;
-}
-
-.chi-siamo .container__testo {
-  background-color: #eeeeee;
-  grid-area: testo;
-  padding: 2em;
-}
-
-.chi-siamo .container__down {
-  grid-area: spazio1;
-  background-color: #eeeeee;
+.homepage .lower__title a {
+  font-size: 0.8em;
+  font-weight: bold;
 }
 /*# sourceMappingURL=main.css.map */
