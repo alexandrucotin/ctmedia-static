@@ -18,6 +18,34 @@ a {
   color: black;
 }
 
+/* ================= */
+/* Loading Screen Styling */
+.loading-screen {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  background-color: #4BEDC2;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scaleY(0) skewX(0);
+          transform: scaleY(0) skewX(0);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Loading Screen Styling Ends */
 .top__nav {
   width: 100%;
   position: fixed;
@@ -167,7 +195,7 @@ a {
 }
 
 .background .set div:nth-child(6) {
-  top: 82%;
+  top: 62%;
   left: 50%;
   width: 2%;
   -webkit-animation: rotate 10s ease-in-out infinite;
@@ -367,8 +395,8 @@ a {
 
 .homepage .upper__title .title {
   margin: 0;
+  padding-left: 1.2em;
   font-size: 2.5em;
-  text-align: center;
 }
 
 .homepage .upper__title .title span {
@@ -389,17 +417,57 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.homepage .lower__title p {
+.homepage .lower__title .container {
+  padding: 0em 3em;
+}
+
+.homepage .lower__title .container p {
   font-size: 0.7em;
+  margin-bottom: 0;
 }
 
-.homepage .lower__title a {
-  padding: .5em;
+.homepage .lower__title .container a {
+  font-size: 0.6em;
+  font-weight: bold;
+}
+
+.chi-siamo {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.chi-siamo .upper__title .title {
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: 2.5em;
+  line-height: 1.2em;
+}
+
+.chi-siamo .upper__title .title span {
+  font-weight: bold;
+}
+
+.chi-siamo .lower__title .container {
+  padding: 1em 3em;
+}
+
+.chi-siamo .lower__title .container p {
+  font-size: 0.7em;
+  margin-bottom: 0;
+}
+
+.chi-siamo .lower__title .container a {
   font-size: 0.6em;
   font-weight: bold;
 }
