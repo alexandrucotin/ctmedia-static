@@ -472,6 +472,73 @@ a {
   font-weight: bold;
 }
 
+.servizi {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.servizi .upper__container .title {
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: 2.5em;
+  line-height: 1.2em;
+}
+
+.servizi .upper__container .title span {
+  font-weight: bold;
+}
+
+.servizi .lower__containers {
+  margin-top: 2em;
+}
+
+.servizi .lower__containers .set_containers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.servizi .lower__containers .set_containers .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1.4em 3em;
+}
+
+.servizi .lower__containers .set_containers .container img {
+  margin-right: 1em;
+  max-width: 10%;
+}
+
+.servizi .lower__containers .set_containers .container p {
+  border-left: 2px solid black;
+  font-size: 0.7em;
+  margin: 0;
+  padding: .7em;
+}
+
+.servizi .lower__containers .frase_sotto {
+  text-align: center;
+  font-size: .7em;
+}
+
+.servizi .lower__containers .frase_sotto a {
+  font-weight: bold;
+}
+
 .underline--magical {
   background-image: linear-gradient(120deg, #faf884 0%, #edf48f 100%);
   background-repeat: no-repeat;

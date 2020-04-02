@@ -283,7 +283,7 @@ a {
   }
 }
 
-// SECTIONS //
+// SEZIONE =======> Homepage //
 .homepage {
   height: 100vh;
   display: grid;
@@ -334,7 +334,7 @@ a {
 
 }
 
-// SECTIONS //
+// SEZIONE =======> Chi siamo //
 .chi-siamo {
   height: 100vh;
   display: flex;
@@ -374,6 +374,66 @@ a {
   }
   
 }
+
+
+// SEZIONE =======> Servizi //
+.servizi {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .upper__container {
+
+    .title {
+      margin: 0;
+      padding-left: 1.2em;
+      font-size: 2.5em;
+      line-height: 1.2em;
+
+      
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .lower__containers {
+    margin-top: 2em;
+
+    .set_containers{
+      display: flex;
+      flex-direction: column;
+
+      .container{
+        display: flex;
+        padding: 1.4em 3em;
+  
+        img{
+          margin-right: 1em;
+          max-width: 10%;
+        }
+  
+        p {
+          border-left: 2px solid black;
+          font-size: 0.7em;
+          margin: 0;
+          padding: .7em;
+        }
+      }
+    }
+    .frase_sotto{
+      text-align: center;
+      font-size: .7em;
+
+      a{
+        font-weight: bold;
+      }
+    }
+  }
+  
+}
+
 
 .underline--magical {
   background-image: linear-gradient(120deg, #faf884 0%, #edf48f 100%);
