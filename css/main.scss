@@ -444,13 +444,56 @@ a {
         p {
           font-size: 0.6rem;
           margin: 0;
-          text-transform: uppercase;
           font-weight: bold;
         }
       }
     }
   }
 }
+
+// SEZIONE =======> Portfolio Item //
+.portfolio_item {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .upper__container {
+
+  padding: 3rem;
+    margin-top: 30%;
+    .title {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .description{
+      margin-top: 1.5rem;
+      font-size: .6rem;
+    }
+  }
+
+  .lower__containers {
+
+    .categoria{
+      font-weight: bold;
+      margin: 0;
+      padding-left: 3rem;
+      font-size: .6rem;
+      text-transform: uppercase;
+    }
+      .container_foto {
+        padding: 0 1.5rem;
+        img{
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+
+
 
 .underline--magical {
   background-image: linear-gradient(120deg, #faf884 0%, #edf48f 100%);
