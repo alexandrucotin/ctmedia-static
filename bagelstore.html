@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="https://use.typekit.net/dlf4akg.css" />
     <link rel="stylesheet" href="/css/glider.theme.css" />
-    <link rel="stylesheet" href="/css/glide.core.css">
+    <link rel="stylesheet" href="/css/glide.core.css" />
     <title>ctmedia</title>
   </head>
   <body data-barba="wrapper">
@@ -68,21 +68,73 @@
           </p>
         </div>
         <div class="lower__containers">
+          <div class="foto">
             <p class="categoria">foto</p>
-          <div class="container_foto">
-            <div class="glide">
-              <div class="glide__track" data-glide-el="track">
-                <ul class="glide__slides">
-                  <li class="glide__slide"><img src="/imgs/bagelstore/bagels.jpg" alt="" /></li>
-                  <li class="glide__slide"><img src="/imgs/bagelstore/patate.jpg" alt="" /></li>
-                  <li class="glide__slide"><img src="/imgs/bagelstore/patateG.jpg" alt="" /></li>
-                  <li class="glide__slide"><img src="/imgs/bagelstore/dolci.jpg" alt="" /></li>
-                  <li class="glide__slide"><img src="/imgs/bagelstore/bagelxl.jpg" alt="" /></li>
-                </ul>
+            <div class="container_foto">
+              <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides">
+                    <li class="glide__slide">
+                      <img src="/imgs/bagelstore/bagels.jpg" alt="" />
+                    </li>
+                    <li class="glide__slide">
+                      <img src="/imgs/bagelstore/patate.jpg" alt="" />
+                    </li>
+                    <li class="glide__slide">
+                      <img src="/imgs/bagelstore/patateG.jpg" alt="" />
+                    </li>
+                    <li class="glide__slide">
+                      <img src="/imgs/bagelstore/dolci.jpg" alt="" />
+                    </li>
+                    <li class="glide__slide">
+                      <img src="/imgs/bagelstore/bagelxl.jpg" alt="" />
+                    </li>
+                  </ul>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                  <button
+                    class="glide__arrow glide__arrow--left"
+                    data-glide-dir="<"
+                  >
+                    prev
+                  </button>
+                  <button
+                    class="glide__arrow glide__arrow--right"
+                    data-glide-dir=">"
+                  >
+                    next
+                  </button>
+                </div>
               </div>
-              <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+            </div>
+          </div>
+          <div class="video">
+            <p class="categoria">video</p>
+            <div class="container_foto">
+              <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <iframe
+                        src="https://www.youtube.com/embed/HURpen9Gi00">
+                        </iframe>
+                    </li>
+                  </ul>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                  <button
+                    class="glide__arrow glide__arrow--left"
+                    data-glide-dir="<"
+                  >
+                    prev
+                  </button>
+                  <button
+                    class="glide__arrow glide__arrow--right"
+                    data-glide-dir=">"
+                  >
+                    next
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -113,11 +165,11 @@
     <script src="https://unpkg.com/@glidejs/glide"></script>
 
     <script>
-        const config= {
-            type: "carousel",
-            perView: 2
-        }
-        new Glide('.glide', config).mount()
-      </script>
+      const config = {
+        type: "carousel",
+        perView: 2
+      };
+      new Glide(".glide", config).mount();
+    </script>
   </body>
 </html>
