@@ -616,12 +616,11 @@ a {
   text-transform: uppercase;
 }
 
-.portfolio_item .lower__containers .container_foto {
-  padding: 0 1.5rem;
-}
-
 .portfolio_item .lower__containers .container_foto img {
-  max-width: 100%;
+  width: 182.5px;
+  height: 153px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .underline--magical {
