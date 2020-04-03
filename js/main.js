@@ -34,14 +34,6 @@ function pageTransition() {
           await delay(1000);
           done();
   
-        },
-  
-        async enter(data) {
-          contentAnimation();
-        },
-  
-        async once(data) {
-          contentAnimation();
         }
   
       }]

@@ -17,10 +17,10 @@ $phone: 500px;
 html,
 body {
   height: 100%;
-}
-body {
   margin: 0;
   font-family: zeitung, sans-serif;
+  font-size: 16px;
+
 }
 
 a {
@@ -64,14 +64,13 @@ a {
   width: 100%;
   position: fixed;
   top: 0;
-  padding: 1em;
+  padding: 1rem;
 
   .logo {
     font-weight: bold;
   }
   .menu {
-    margin: 0 30px 0 0;
-    font-size: 0.7em;
+    font-size: 0.7rem;
 
     #no--display {
       @include phone {
@@ -80,16 +79,10 @@ a {
     }
     a {
       clear: right;
-      text-decoration: none;
-      margin: 0 10px;
-      line-height: 2em;
+      line-height: 2rem;
 
       &:hover {
         color: #393e46;
-      }
-
-      span {
-        font-weight: bold;
       }
 
       @include phone {
@@ -285,6 +278,7 @@ a {
 
 // SEZIONE =======> Homepage //
 .homepage {
+  padding: 3rem;
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -300,8 +294,7 @@ a {
 
     .title {
       margin: 0;
-      padding-left: 1.2em;
-      font-size: 2.5em;
+      font-size: 2.5rem;
 
       span {
         font-weight: bold;
@@ -316,15 +309,14 @@ a {
     justify-content: center;
 
     .container {
-      padding: 0em 3em;
 
       p {
-        font-size: 0.7em;
+        font-size: 0.7rem;
         margin-bottom: 0;
       }
 
       a {
-        font-size: 0.6em;
+        font-size: 0.6rem;
         font-weight: bold;
       }
     }
@@ -333,6 +325,7 @@ a {
 
 // SEZIONE =======> Chi siamo //
 .chi-siamo {
+  padding: 3rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -341,9 +334,8 @@ a {
   .upper__title {
     .title {
       margin: 0;
-      padding-left: 1.2em;
-      font-size: 2.5em;
-      line-height: 1.2em;
+      font-size: 2.5rem;
+      line-height: 2.8rem;
 
       span {
         font-weight: bold;
@@ -353,16 +345,9 @@ a {
 
   .lower__title {
     .container {
-      padding: 1em 3em;
-
+      padding-top:1em;
       p {
-        font-size: 0.7em;
-        margin-bottom: 0;
-      }
-
-      a {
-        font-size: 0.6em;
-        font-weight: bold;
+        font-size: 0.7rem;
       }
     }
   }
@@ -370,6 +355,8 @@ a {
 
 // SEZIONE =======> Servizi //
 .servizi {
+
+  padding: 3rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -377,19 +364,14 @@ a {
 
   .upper__container {
     .title {
+      font-weight: bold;
       margin: 0;
-      padding-left: 1.2em;
-      font-size: 2.5em;
-      line-height: 1.2em;
-
-      span {
-        font-weight: bold;
-      }
+      font-size: 2.5rem;
     }
   }
 
   .lower__containers {
-    margin-top: 2em;
+    margin-top: 1rem;
 
     .set_containers {
       display: flex;
@@ -397,24 +379,25 @@ a {
 
       .container {
         display: flex;
-        padding: 1.4em 3em;
+        padding-top: 2rem;
 
         img {
-          margin-right: 1em;
+          margin-right: 1rem;
           max-width: 10%;
         }
 
         p {
           border-left: 2px solid black;
-          font-size: 0.7em;
+          font-size: 0.7rem;
           margin: 0;
-          padding: 0.7em;
+          padding: 0.6rem;
         }
       }
     }
     .frase_sotto {
+      margin-top: 3rem;
       text-align: center;
-      font-size: 0.7em;
+      font-size: 0.7rem;
 
       a {
         font-weight: bold;
@@ -425,7 +408,7 @@ a {
 
 // SEZIONE =======> Portfolio //
 .portfolio {
-  padding: 2.5em;
+  padding: 3rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -435,7 +418,7 @@ a {
     margin-top: 100%;
     .title {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 2.5rem;
 
       span {
         font-weight: bold;
@@ -444,32 +427,24 @@ a {
   }
 
   .lower__containers {
-    margin-top: 2em;
+    margin-top: 2rem;
 
     .set_containers {
       display: flex;
       flex-direction: column;
 
       .container {
-        padding-bottom: 3em;
+        padding-bottom: 3rem;
         img {
           max-width: 100%;
         }
 
         p {
-          font-size: 0.6em;
+          font-size: 0.6rem;
           margin: 0;
           text-transform: uppercase;
           font-weight: bold;
         }
-      }
-    }
-    .frase_sotto {
-      text-align: center;
-      font-size: 0.7em;
-
-      a {
-        font-weight: bold;
       }
     }
   }
@@ -478,7 +453,7 @@ a {
 .underline--magical {
   background-image: linear-gradient(120deg, #faf884 0%, #edf48f 100%);
   background-repeat: no-repeat;
-  background-size: 30% 0.5em;
+  background-size: 30% 0.5rem;
   background-position: 0 88%;
   transition: background-size 0.25s ease-in;
   &:hover {
