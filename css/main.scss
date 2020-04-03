@@ -378,12 +378,13 @@ a {
       flex-direction: column;
 
       .container {
-        display: flex;
+        display: grid;
+        grid-template-columns: 10% 90%;
         padding-top: 2rem;
+        align-items: center;
 
         img {
-          margin-right: 1rem;
-          max-width: 10%;
+          width: 100%;
         }
 
         p {
@@ -391,6 +392,7 @@ a {
           font-size: 0.7rem;
           margin: 0;
           padding: 0.6rem;
+          margin-left: 1rem;
         }
       }
     }

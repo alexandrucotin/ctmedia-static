@@ -490,15 +490,18 @@ a {
 }
 
 .servizi .lower__containers .set_containers .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 90%;
+      grid-template-columns: 10% 90%;
   padding-top: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .servizi .lower__containers .set_containers .container img {
-  margin-right: 1rem;
-  max-width: 10%;
+  width: 100%;
 }
 
 .servizi .lower__containers .set_containers .container p {
@@ -506,6 +509,7 @@ a {
   font-size: 0.7rem;
   margin: 0;
   padding: 0.6rem;
+  margin-left: 1rem;
 }
 
 .servizi .lower__containers .frase_sotto {
